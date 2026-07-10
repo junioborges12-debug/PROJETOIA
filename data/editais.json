@@ -1,0 +1,41 @@
+{
+  "last_verified": "2026-07-10",
+  "editais": [
+    {
+      "id": "cnpq-minc-17-2026",
+      "title": "Edital CNPq/MinC nº 17/2026",
+      "organization": "CNPq e Ministério da Cultura",
+      "deadline": "2026-08-10",
+      "value": "Consulte o edital",
+      "region": "Brasil",
+      "categories": ["Economia criativa", "Pesquisa", "Incubadoras"],
+      "summary": "Apoia projetos de pesquisa para implantação e funcionamento de incubadoras de Economia Criativa.",
+      "url": "https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/edital-cnpq-minc-no-17-2026/edital-cnpq-minc-no-17-2026",
+      "status": "aberto"
+    },
+    {
+      "id": "rouanet-favelas-2-2026",
+      "title": "Programa Rouanet nas Favelas 2",
+      "organization": "Ministério da Cultura, Vale e CUFA",
+      "deadline": "2026-10-13",
+      "value": "Investimento total de R$ 10 milhões",
+      "region": "Capitais brasileiras e Distrito Federal",
+      "categories": ["Cultura", "Favelas", "Periferias"],
+      "summary": "Seleciona projetos culturais desenvolvidos em territórios de favelas e periferias urbanas.",
+      "url": "https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/programa-rouanet-nas-favelas-2/programa-rouanet-nas-favelas-2",
+      "status": "aberto"
+    },
+    {
+      "id": "intercambio-audiovisual-minc-1-2026",
+      "title": "Intercâmbio Cultural — Audiovisual no Exterior",
+      "organization": "Ministério da Cultura",
+      "deadline": "2026-11-06",
+      "value": "Consulte o edital",
+      "region": "Brasil",
+      "categories": ["Audiovisual", "Circulação", "Intercâmbio"],
+      "summary": "Apoia circulação e participação audiovisual no exterior, em regime de fluxo contínuo.",
+      "url": "https://www.gov.br/cultura/pt-br/assuntos/editais/inscricoes-abertas/edital-de-intercambio-cultural-circulacao-e-participacao-audiovisual-no-exterior",
+      "status": "aberto"
+    }
+  ]
+}
