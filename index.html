@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#165c4a" />
     <meta name="description" content="ProjetoIA — do propósito ao projeto pronto para transformar." />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="styles.css?v=4" />
+    <link rel="stylesheet" href="styles.css?v=8" />
     <title>ProjetoIA</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
         <nav class="side-nav">
           <button class="nav-item active" data-route="inicio"><span class="icon">⌂</span> Início</button>
           <button class="nav-item" data-route="projetos"><span class="icon">▤</span> Projetos</button>
-          <button class="nav-item" data-route="assistente"><span class="icon">✦</span> Assistente IA</button>
+          <button class="nav-item" data-route="assistente"><span class="icon">✦</span> Construtor guiado</button>
           <button class="nav-item" data-route="editais"><span class="icon">◎</span> Editais</button>
           <button class="nav-item" data-route="aprender"><span class="icon">▷</span> Aprender</button>
         </nav>
@@ -64,9 +64,9 @@
             <article class="ai-hero">
               <span class="sparkle">✦</span>
               <div>
-                <span class="eyebrow light">ASSISTENTE PROJETOIA</span>
-                <h2>Conte sua ideia.<br />Eu ajudo a dar forma.</h2>
-                <p>Vamos conversar sobre o impacto que você quer criar. Enquanto você responde, seu projeto ganha vida.</p>
+                <span class="eyebrow light">CONSTRUTOR GRATUITO</span>
+                <h2>Conte sua ideia.<br />Eu ajudo a organizar.</h2>
+                <p>Responda com suas palavras, use exemplos quando precisar e edite cada parte antes de exportar.</p>
                 <button class="cream-button" data-route="assistente">Começar uma conversa <span>→</span></button>
               </div>
               <div class="idea-orbit" aria-hidden="true">
@@ -110,7 +110,7 @@
         <section class="page" id="page-assistente">
           <div class="workspace">
             <div class="chat-panel">
-              <div class="chat-header"><div><span class="ai-avatar">✦</span><span><strong>Assistente ProjetoIA</strong><small><i class="online"></i> Modo gratuito · funciona sem API</small></span></div><button class="small-button" id="toggle-document">Ver projeto</button></div>
+              <div class="chat-header"><div><span class="ai-avatar">✦</span><span><strong>Construtor guiado</strong><small><i class="online"></i> Gratuito · exemplos, revisão e orientação</small></span></div><button class="small-button" id="toggle-document">Ver projeto</button></div>
               <div class="messages" id="messages">
                 <div class="message ai"><span>✦</span><div><p>O modo gratuito está pronto. Crie ou abra um projeto e eu conduzirei uma entrevista passo a passo.</p></div></div>
                 <div class="suggestions"><button data-action="new-project">Criar meu primeiro projeto</button></div>
@@ -143,7 +143,7 @@
       </main>
 
       <nav class="bottom-nav" aria-label="Navegação mobile">
-        <button class="active" data-route="inicio"><span>⌂</span>Início</button><button data-route="projetos"><span>▤</span>Projetos</button><button class="ai-tab" data-route="assistente"><span>✦</span>IA</button><button data-route="editais"><span>◎</span>Editais</button><button data-route="perfil"><span>○</span>Perfil</button>
+        <button class="active" data-route="inicio"><span>⌂</span>Início</button><button data-route="projetos"><span>▤</span>Projetos</button><button class="ai-tab" data-route="assistente"><span>✦</span>Criar</button><button data-route="editais"><span>◎</span>Editais</button><button data-route="perfil"><span>○</span>Perfil</button>
       </nav>
     </div>
 
@@ -158,6 +158,6 @@
     </dialog>
 
     <div class="toast" id="toast" role="status"></div>
-    <script src="app.js?v=5"></script>
+    <script src="app.js?v=8"></script>
   </body>
 </html>
