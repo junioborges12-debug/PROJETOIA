@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#165c4a" />
     <meta name="description" content="ProjetoIA — do propósito ao projeto pronto para transformar." />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="styles.css?v=2" />
+    <link rel="stylesheet" href="styles.css?v=4" />
     <title>ProjetoIA</title>
   </head>
   <body>
@@ -75,15 +75,15 @@
               </div>
             </article>
 
-            <article class="deadline-card">
-              <div class="card-title-row"><span><i class="status-dot"></i> Prazo próximo</span><button>•••</button></div>
-              <span class="eyebrow">EDITAL</span>
-              <h3>Seleção Cultura Viva 2026</h3>
-              <p>Ministério da Cultura</p>
-              <div class="countdown"><strong>5</strong><span>dias para encerrar</span></div>
-              <div class="match"><span>Compatibilidade</span><strong>92%</strong></div>
-              <div class="progress"><span style="width:92%"></span></div>
-              <button class="outline-button" data-route="editais">Ver oportunidade →</button>
+            <article class="deadline-card" id="next-deadline-card">
+              <div class="card-title-row"><span><i class="status-dot"></i> Próxima oportunidade</span></div>
+              <span class="eyebrow">EDITAL VERIFICADO</span>
+              <h3>Carregando editais...</h3>
+              <p>Atualização diária às 8h</p>
+              <div class="countdown"><strong>—</strong><span>dias para encerrar</span></div>
+              <div class="match"><span>Fonte oficial</span><strong>✓</strong></div>
+              <div class="progress"><span style="width:100%"></span></div>
+              <button class="outline-button" data-route="editais">Ver oportunidades →</button>
             </article>
           </div>
 
@@ -92,53 +92,33 @@
             <button class="text-button" data-route="projetos">Ver todos →</button>
           </div>
 
-          <div class="project-grid">
-            <article class="project-card" data-project="Vozes do Território">
-              <div class="project-top"><span class="tag coral">Cultura</span><button>•••</button></div>
-              <h3>Vozes do Território</h3><p>Formação audiovisual para jovens de comunidades periféricas.</p>
-              <div class="quality"><span>Qualidade do projeto</span><strong>84</strong></div>
-              <div class="progress"><span style="width:84%"></span></div>
-              <div class="project-footer"><span>Atualizado hoje</span><span class="people"><i>JB</i><i>MA</i></span></div>
-            </article>
-            <article class="project-card" data-project="Raízes em Movimento">
-              <div class="project-top"><span class="tag yellow">Economia criativa</span><button>•••</button></div>
-              <h3>Raízes em Movimento</h3><p>Valorização de mestres e saberes tradicionais do Espírito Santo.</p>
-              <div class="quality"><span>Qualidade do projeto</span><strong>67</strong></div>
-              <div class="progress amber"><span style="width:67%"></span></div>
-              <div class="project-footer"><span>Atualizado há 2 dias</span><span class="people"><i>JB</i></span></div>
-            </article>
-            <button class="new-card" data-action="new-project"><span>＋</span><strong>Novo projeto</strong><small>Comece por uma ideia</small></button>
-          </div>
+          <div class="project-grid" id="dashboard-projects"></div>
 
           <div class="insight-strip">
             <span class="insight-icon">✦</span>
-            <div><span class="eyebrow">INSIGHT DA SEMANA</span><p>Projetos com metas mensuráveis têm mais clareza na avaliação. Que tal revisar as metas do <strong>Vozes do Território?</strong></p></div>
-            <button data-route="assistente">Revisar com IA →</button>
+            <div><span class="eyebrow">MODO GRATUITO ATIVO</span><p>Responda à entrevista guiada e acompanhe seu texto, orçamento e pontuação sendo organizados no próprio aparelho.</p></div>
+            <button data-action="new-project">Começar agora →</button>
           </div>
         </section>
 
         <section class="page" id="page-projetos">
           <div class="page-header"><div><span class="eyebrow">ESPAÇO DE TRABALHO</span><h1>Meus projetos</h1><p>Ideias que estão ganhando forma e impacto.</p></div><button class="primary-button" data-action="new-project">＋ Novo projeto</button></div>
-          <div class="filter-row"><button class="chip active">Todos <b>3</b></button><button class="chip">Rascunhos <b>2</b></button><button class="chip">Prontos <b>1</b></button><label class="search-box">⌕ <input placeholder="Buscar projeto" /></label></div>
-          <div class="project-list">
-            <button class="list-project" data-project="Vozes do Território"><span class="project-glyph coral">V</span><span><strong>Vozes do Território</strong><small>Cultura · Edital Cultura Viva 2026</small></span><span class="list-score"><b>84%</b><small>qualidade</small></span><span>→</span></button>
-            <button class="list-project" data-project="Raízes em Movimento"><span class="project-glyph yellow">R</span><span><strong>Raízes em Movimento</strong><small>Economia criativa · Sem edital vinculado</small></span><span class="list-score"><b>67%</b><small>qualidade</small></span><span>→</span></button>
-            <button class="list-project" data-project="Cultura que Cuida"><span class="project-glyph green">C</span><span><strong>Cultura que Cuida</strong><small>Saúde e cultura · Projeto concluído</small></span><span class="list-score"><b>96%</b><small>qualidade</small></span><span>→</span></button>
-          </div>
+          <div class="filter-row"><button class="chip active" data-filter="all">Todos <b id="count-all">0</b></button><button class="chip" data-filter="draft">Em construção <b id="count-draft">0</b></button><button class="chip" data-filter="ready">Completos <b id="count-ready">0</b></button><label class="search-box">⌕ <input id="project-search" placeholder="Buscar projeto" /></label></div>
+          <div class="project-list" id="project-list"></div>
         </section>
 
         <section class="page" id="page-assistente">
           <div class="workspace">
             <div class="chat-panel">
-              <div class="chat-header"><div><span class="ai-avatar">✦</span><span><strong>Assistente ProjetoIA</strong><small><i class="online"></i> Conhece sua organização</small></span></div><button>•••</button></div>
+              <div class="chat-header"><div><span class="ai-avatar">✦</span><span><strong>Assistente ProjetoIA</strong><small><i class="online"></i> Modo gratuito · funciona sem API</small></span></div><button class="small-button" id="toggle-document">Ver projeto</button></div>
               <div class="messages" id="messages">
-                <div class="message ai"><span>✦</span><div><p>Olá, Júnior! Vamos transformar sua ideia em um projeto claro, humano e competitivo.</p><p>Para começar: <strong>qual mudança você quer provocar e para quem?</strong></p></div></div>
-                <div class="suggestions"><button>Tenho uma ideia inicial</button><button>Já tenho um edital</button><button>Quero melhorar um projeto</button></div>
+                <div class="message ai"><span>✦</span><div><p>O modo gratuito está pronto. Crie ou abra um projeto e eu conduzirei uma entrevista passo a passo.</p></div></div>
+                <div class="suggestions"><button data-action="new-project">Criar meu primeiro projeto</button></div>
               </div>
-              <form class="composer" id="chat-form"><label><textarea id="chat-input" rows="1" placeholder="Conte sua ideia com suas palavras..."></textarea><button type="submit" aria-label="Enviar">↑</button></label><small>A IA pode cometer erros. Você sempre terá controle sobre o texto final.</small></form>
+              <form class="composer" id="chat-form"><label><textarea id="chat-input" rows="1" placeholder="Responda com suas palavras..." disabled></textarea><button type="submit" aria-label="Enviar" disabled>↑</button></label><small>Suas informações ficam salvas somente neste aparelho.</small></form>
             </div>
             <div class="live-document">
-              <div class="document-header"><span><small>PROJETO EM CONSTRUÇÃO</small><strong>Seu projeto aparece aqui</strong></span><span class="saved">● Salvo</span></div>
+              <div class="document-header"><button class="small-button mobile-only" id="back-to-chat">← Conversa</button><span><small>PROJETO EM CONSTRUÇÃO</small><strong id="document-title">Seu projeto aparece aqui</strong></span><div class="document-actions"><span class="saved">● Salvo no aparelho</span><button class="small-button" id="export-project" disabled>Exportar Word</button></div></div>
               <div class="empty-document" id="document-preview"><span>✦</span><h3>A ideia ganha forma enquanto conversamos</h3><p>Suas respostas serão organizadas em resumo, justificativa, objetivos, metodologia, cronograma e orçamento.</p></div>
             </div>
           </div>
@@ -170,7 +150,7 @@
     <dialog id="project-dialog">
       <form method="dialog" id="project-form">
         <div class="dialog-top"><span class="ai-avatar">✦</span><button type="button" data-dialog-close aria-label="Fechar">×</button></div>
-        <span class="eyebrow">NOVO PROJETO</span><h2>Vamos começar pela sua ideia</h2><p>Não precisa estar perfeita. Escreva do seu jeito e a IA ajuda a organizar.</p>
+        <span class="eyebrow">NOVO PROJETO · MODO GRATUITO</span><h2>Vamos começar pela sua ideia</h2><p>Não precisa estar perfeita. A entrevista guiada ajudará você a organizar cada parte.</p>
         <label for="project-name">Como você chama essa ideia?</label><input id="project-name" name="name" required placeholder="Ex.: Oficinas de audiovisual para jovens" />
         <label for="project-area">Em qual área ela atua?</label><select id="project-area" name="area"><option>Cultura</option><option>Educação</option><option>Impacto social</option><option>Meio ambiente</option><option>Esporte</option></select>
         <div class="dialog-actions"><button type="button" data-dialog-close class="text-button">Agora não</button><button type="submit" class="primary-button">Conversar com a IA →</button></div>
@@ -178,6 +158,6 @@
     </dialog>
 
     <div class="toast" id="toast" role="status"></div>
-    <script src="app.js?v=2"></script>
+    <script src="app.js?v=5"></script>
   </body>
 </html>
