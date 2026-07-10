@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#165c4a" />
+    <meta name="description" content="ProjetoIA — do propósito ao projeto pronto para transformar." />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>ProjetoIA</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Navegação principal">
+        <a class="brand" href="#inicio" data-route="inicio" aria-label="ProjetoIA — início">
+          <span class="brand-mark">P<span>+</span></span>
+          <span>Projeto<strong>IA</strong></span>
+        </a>
+
+        <nav class="side-nav">
+          <button class="nav-item active" data-route="inicio"><span class="icon">⌂</span> Início</button>
+          <button class="nav-item" data-route="projetos"><span class="icon">▤</span> Projetos</button>
+          <button class="nav-item" data-route="assistente"><span class="icon">✦</span> Assistente IA</button>
+          <button class="nav-item" data-route="editais"><span class="icon">◎</span> Editais</button>
+          <button class="nav-item" data-route="aprender"><span class="icon">▷</span> Aprender</button>
+        </nav>
+
+        <div class="org-card">
+          <span class="eyebrow">Sua organização</span>
+          <strong>Hub Cultura +</strong>
+          <div class="org-progress"><span></span></div>
+          <small>Perfil 72% completo</small>
+          <button class="text-button" data-route="perfil">Completar perfil →</button>
+        </div>
+
+        <button class="profile-mini" data-route="perfil">
+          <span class="avatar">JB</span>
+          <span><strong>Júnior Borges</strong><small>Administrador</small></span>
+          <span>···</span>
+        </button>
+      </aside>
+
+      <main>
+        <header class="topbar">
+          <button class="mobile-brand" data-route="inicio"><span class="brand-mark">P<span>+</span></span> Projeto<strong>IA</strong></button>
+          <div class="top-actions">
+            <button class="icon-button" aria-label="Pesquisar">⌕</button>
+            <button class="icon-button notification" aria-label="Notificações">♢<span></span></button>
+            <span class="avatar mobile-avatar">JB</span>
+          </div>
+        </header>
+
+        <section class="page active" id="page-inicio">
+          <div class="welcome-row">
+            <div>
+              <span class="eyebrow">SEXTA-FEIRA, 10 DE JULHO</span>
+              <h1>Olá, Júnior. <em>Vamos transformar?</em></h1>
+              <p>Seu próximo projeto de impacto começa com uma boa conversa.</p>
+            </div>
+            <button class="primary-button" data-action="new-project"><span>＋</span> Criar novo projeto</button>
+          </div>
+
+          <div class="hero-grid">
+            <article class="ai-hero">
+              <span class="sparkle">✦</span>
+              <div>
+                <span class="eyebrow light">ASSISTENTE PROJETOIA</span>
+                <h2>Conte sua ideia.<br />Eu ajudo a dar forma.</h2>
+                <p>Vamos conversar sobre o impacto que você quer criar. Enquanto você responde, seu projeto ganha vida.</p>
+                <button class="cream-button" data-route="assistente">Começar uma conversa <span>→</span></button>
+              </div>
+              <div class="idea-orbit" aria-hidden="true">
+                <span class="orbit orbit-one"></span><span class="orbit orbit-two"></span>
+                <span class="bulb">✦</span><span class="mini-star one">✦</span><span class="mini-star two">✦</span>
+              </div>
+            </article>
+
+            <article class="deadline-card">
+              <div class="card-title-row"><span><i class="status-dot"></i> Prazo próximo</span><button>•••</button></div>
+              <span class="eyebrow">EDITAL</span>
+              <h3>Seleção Cultura Viva 2026</h3>
+              <p>Ministério da Cultura</p>
+              <div class="countdown"><strong>5</strong><span>dias para encerrar</span></div>
+              <div class="match"><span>Compatibilidade</span><strong>92%</strong></div>
+              <div class="progress"><span style="width:92%"></span></div>
+              <button class="outline-button" data-route="editais">Ver oportunidade →</button>
+            </article>
+          </div>
+
+          <div class="section-heading">
+            <div><span class="eyebrow">EM ANDAMENTO</span><h2>Seus projetos</h2></div>
+            <button class="text-button" data-route="projetos">Ver todos →</button>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card" data-project="Vozes do Território">
+              <div class="project-top"><span class="tag coral">Cultura</span><button>•••</button></div>
+              <h3>Vozes do Território</h3><p>Formação audiovisual para jovens de comunidades periféricas.</p>
+              <div class="quality"><span>Qualidade do projeto</span><strong>84</strong></div>
+              <div class="progress"><span style="width:84%"></span></div>
+              <div class="project-footer"><span>Atualizado hoje</span><span class="people"><i>JB</i><i>MA</i></span></div>
+            </article>
+            <article class="project-card" data-project="Raízes em Movimento">
+              <div class="project-top"><span class="tag yellow">Economia criativa</span><button>•••</button></div>
+              <h3>Raízes em Movimento</h3><p>Valorização de mestres e saberes tradicionais do Espírito Santo.</p>
+              <div class="quality"><span>Qualidade do projeto</span><strong>67</strong></div>
+              <div class="progress amber"><span style="width:67%"></span></div>
+              <div class="project-footer"><span>Atualizado há 2 dias</span><span class="people"><i>JB</i></span></div>
+            </article>
+            <button class="new-card" data-action="new-project"><span>＋</span><strong>Novo projeto</strong><small>Comece por uma ideia</small></button>
+          </div>
+
+          <div class="insight-strip">
+            <span class="insight-icon">✦</span>
+            <div><span class="eyebrow">INSIGHT DA SEMANA</span><p>Projetos com metas mensuráveis têm mais clareza na avaliação. Que tal revisar as metas do <strong>Vozes do Território?</strong></p></div>
+            <button data-route="assistente">Revisar com IA →</button>
+          </div>
+        </section>
+
+        <section class="page" id="page-projetos">
+          <div class="page-header"><div><span class="eyebrow">ESPAÇO DE TRABALHO</span><h1>Meus projetos</h1><p>Ideias que estão ganhando forma e impacto.</p></div><button class="primary-button" data-action="new-project">＋ Novo projeto</button></div>
+          <div class="filter-row"><button class="chip active">Todos <b>3</b></button><button class="chip">Rascunhos <b>2</b></button><button class="chip">Prontos <b>1</b></button><label class="search-box">⌕ <input placeholder="Buscar projeto" /></label></div>
+          <div class="project-list">
+            <button class="list-project" data-project="Vozes do Território"><span class="project-glyph coral">V</span><span><strong>Vozes do Território</strong><small>Cultura · Edital Cultura Viva 2026</small></span><span class="list-score"><b>84%</b><small>qualidade</small></span><span>→</span></button>
+            <button class="list-project" data-project="Raízes em Movimento"><span class="project-glyph yellow">R</span><span><strong>Raízes em Movimento</strong><small>Economia criativa · Sem edital vinculado</small></span><span class="list-score"><b>67%</b><small>qualidade</small></span><span>→</span></button>
+            <button class="list-project" data-project="Cultura que Cuida"><span class="project-glyph green">C</span><span><strong>Cultura que Cuida</strong><small>Saúde e cultura · Projeto concluído</small></span><span class="list-score"><b>96%</b><small>qualidade</small></span><span>→</span></button>
+          </div>
+        </section>
+
+        <section class="page" id="page-assistente">
+          <div class="workspace">
+            <div class="chat-panel">
+              <div class="chat-header"><div><span class="ai-avatar">✦</span><span><strong>Assistente ProjetoIA</strong><small><i class="online"></i> Conhece sua organização</small></span></div><button>•••</button></div>
+              <div class="messages" id="messages">
+                <div class="message ai"><span>✦</span><div><p>Olá, Júnior! Vamos transformar sua ideia em um projeto claro, humano e competitivo.</p><p>Para começar: <strong>qual mudança você quer provocar e para quem?</strong></p></div></div>
+                <div class="suggestions"><button>Tenho uma ideia inicial</button><button>Já tenho um edital</button><button>Quero melhorar um projeto</button></div>
+              </div>
+              <form class="composer" id="chat-form"><label><textarea id="chat-input" rows="1" placeholder="Conte sua ideia com suas palavras..."></textarea><button type="submit" aria-label="Enviar">↑</button></label><small>A IA pode cometer erros. Você sempre terá controle sobre o texto final.</small></form>
+            </div>
+            <div class="live-document">
+              <div class="document-header"><span><small>PROJETO EM CONSTRUÇÃO</small><strong>Seu projeto aparece aqui</strong></span><span class="saved">● Salvo</span></div>
+              <div class="empty-document" id="document-preview"><span>✦</span><h3>A ideia ganha forma enquanto conversamos</h3><p>Suas respostas serão organizadas em resumo, justificativa, objetivos, metodologia, cronograma e orçamento.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="page-editais">
+          <div class="page-header"><div><span class="eyebrow">OPORTUNIDADES</span><h1>Editais para o seu impacto</h1><p>A IA compara cada oportunidade com o perfil da sua organização.</p></div><button class="primary-button">＋ Enviar edital em PDF</button></div>
+          <div class="opportunity-grid">
+            <article class="opportunity"><span class="match-badge">92% compatível</span><small>ENCERRA EM 5 DIAS</small><h3>Seleção Cultura Viva 2026</h3><p>Ministério da Cultura · Até R$ 120 mil</p><div class="tags"><span>Cultura popular</span><span>Formação</span></div><button class="primary-button">Adaptar meu projeto</button></article>
+            <article class="opportunity"><span class="match-badge">86% compatível</span><small>ENCERRA EM 18 DIAS</small><h3>Fundo de Cultura do Espírito Santo</h3><p>Secult ES · Até R$ 80 mil</p><div class="tags"><span>Território</span><span>Juventude</span></div><button class="outline-button">Ver detalhes</button></article>
+            <article class="opportunity"><span class="match-badge">78% compatível</span><small>ENCERRA EM 32 DIAS</small><h3>Transformando Comunidades</h3><p>Instituto Horizonte · Até R$ 50 mil</p><div class="tags"><span>Impacto social</span><span>Educação</span></div><button class="outline-button">Ver detalhes</button></article>
+          </div>
+        </section>
+
+        <section class="page" id="page-aprender">
+          <div class="page-header"><div><span class="eyebrow">TRILHAS PRÁTICAS</span><h1>Aprenda enquanto cria</h1><p>Conteúdos curtos, exemplos e aplicação direta no seu projeto.</p></div></div>
+          <div class="course-feature"><div><span class="eyebrow light">TRILHA RECOMENDADA</span><h2>Como estruturar um projeto cultural do zero</h2><p>6 aulas · 42 minutos · exercícios aplicados</p><button class="cream-button">Continuar aprendendo →</button></div><span class="course-art">▷</span></div>
+          <div class="course-grid"><article><span>01</span><h3>Da ideia ao problema</h3><p>Aprenda a transformar uma vontade em um problema claro.</p></article><article><span>02</span><h3>Objetivos que orientam</h3><p>Escreva objetivos realistas e conectados ao impacto.</p></article><article><span>03</span><h3>Orçamento sem medo</h3><p>Planeje recursos e custos com transparência.</p></article></div>
+        </section>
+
+        <section class="page" id="page-perfil">
+          <div class="page-header"><div><span class="eyebrow">INTELIGÊNCIA INSTITUCIONAL</span><h1>Hub Cultura +</h1><p>Este perfil alimenta todos os projetos criados pela IA.</p></div><button class="primary-button">Editar organização</button></div>
+          <div class="profile-grid"><article><span class="eyebrow">PROPÓSITO</span><h3>Transformamos ideias em impacto real</h3><p>Conectamos pessoas, territórios e projetos para fortalecer a economia criativa e promover desenvolvimento social por meio da cultura.</p></article><article><span class="eyebrow">MEMÓRIA</span><h3>10 anos de atuação</h3><p>Gestão cultural com raízes no território, formação cidadã, juventudes e fortalecimento comunitário.</p></article><article><span class="eyebrow">ESPECIALIDADES</span><div class="tags"><span>Elaboração</span><span>Execução</span><span>Prestação de contas</span><span>Consultoria</span></div></article></div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="Navegação mobile">
+        <button class="active" data-route="inicio"><span>⌂</span>Início</button><button data-route="projetos"><span>▤</span>Projetos</button><button class="ai-tab" data-route="assistente"><span>✦</span>IA</button><button data-route="editais"><span>◎</span>Editais</button><button data-route="perfil"><span>○</span>Perfil</button>
+      </nav>
+    </div>
+
+    <dialog id="project-dialog">
+      <form method="dialog" id="project-form">
+        <div class="dialog-top"><span class="ai-avatar">✦</span><button type="button" data-dialog-close aria-label="Fechar">×</button></div>
+        <span class="eyebrow">NOVO PROJETO</span><h2>Vamos começar pela sua ideia</h2><p>Não precisa estar perfeita. Escreva do seu jeito e a IA ajuda a organizar.</p>
+        <label for="project-name">Como você chama essa ideia?</label><input id="project-name" name="name" required placeholder="Ex.: Oficinas de audiovisual para jovens" />
+        <label for="project-area">Em qual área ela atua?</label><select id="project-area" name="area"><option>Cultura</option><option>Educação</option><option>Impacto social</option><option>Meio ambiente</option><option>Esporte</option></select>
+        <div class="dialog-actions"><button type="button" data-dialog-close class="text-button">Agora não</button><button type="submit" class="primary-button">Conversar com a IA →</button></div>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
