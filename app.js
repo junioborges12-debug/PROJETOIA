@@ -87,11 +87,71 @@ function showToast(message) {
   setTimeout(() => toast.classList.remove('show'), 2600);
 }
 
+async function loadEditais() {
+  const grid = document.querySelector('#opportunity-grid');
+  const status = document.querySelector('#editais-status');
+  if (!grid || !status) return;
+
+  try {
+    const response = await fetch('./data/editais.json', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Não foi possível carregar os editais');
+    const data = await response.json();
+    const editais = [...(data.editais || [])]
+      .filter(item => item.status === 'aberto')
+      .sort((a, b) => new Date(a.deadline) - new Date(b.deadline));
+
+    status.innerHTML = `<span class="online"></span> Atualização diária · Última verificação: <strong>${escapeHtml(formatDate(data.last_verified))}</strong> · ${editais.length} oportunidades abertas`;
+
+    if (!editais.length) {
+      grid.innerHTML = '<div class="empty-editais"><span>◎</span><h3>Nenhum edital aberto encontrado hoje</h3><p>A busca será realizada novamente amanhã às 8h.</p></div>';
+      return;
+    }
+
+    grid.innerHTML = editais.map(item => {
+      const days = daysUntil(item.deadline);
+      const deadlineLabel = days === 0 ? 'ENCERRA HOJE' : days === 1 ? 'ENCERRA AMANHÃ' : `ENCERRA EM ${days} DIAS`;
+      const badge = days <= 7 ? 'Encerrando' : 'Inscrições abertas';
+      const tags = (item.categories || []).slice(0, 3).map(tag => `<span>${escapeHtml(tag)}</span>`).join('');
+      return `<article class="opportunity ${days <= 7 ? 'closing' : ''}">
+        <span class="match-badge">${badge}</span>
+        <small>${deadlineLabel}</small>
+        <h3>${escapeHtml(item.title)}</h3>
+        <p>${escapeHtml(item.organization)} · ${escapeHtml(item.value || 'Consulte o edital')}</p>
+        <p class="opportunity-summary">${escapeHtml(item.summary || '')}</p>
+        <div class="tags">${tags}</div>
+        <a class="outline-button opportunity-link" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer">Ver edital oficial →</a>
+      </article>`;
+    }).join('');
+  } catch (error) {
+    status.textContent = 'Não foi possível atualizar os editais agora.';
+    grid.innerHTML = '<div class="empty-editais"><span>↻</span><h3>Tentaremos novamente em instantes</h3><p>As demais áreas do aplicativo continuam disponíveis.</p></div>';
+  }
+}
+
+function daysUntil(date) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const deadline = new Date(`${date}T23:59:59`);
+  return Math.max(0, Math.ceil((deadline - today) / 86400000));
+}
+
+function formatDate(date) {
+  return new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short', timeZone: 'America/Sao_Paulo' }).format(new Date(`${date}T12:00:00`));
+}
+
+function safeUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' ? url.href : '#';
+  } catch { return '#'; }
+}
+
 document.querySelectorAll('.chip').forEach(chip => chip.addEventListener('click', () => {
   document.querySelectorAll('.chip').forEach(item => item.classList.remove('active'));
   chip.classList.add('active');
 }));
 
 navigate(location.hash.slice(1) || 'inicio');
+loadEditais();
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('./service-worker.js');
