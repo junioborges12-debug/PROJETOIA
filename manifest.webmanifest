@@ -1,0 +1,10 @@
+{
+  "name": "ProjetoIA",
+  "short_name": "ProjetoIA",
+  "description": "Do propósito ao projeto pronto para transformar.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f4ec",
+  "theme_color": "#165c4a",
+  "icons": []
+}
